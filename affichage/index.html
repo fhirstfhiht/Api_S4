@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Interface Sport</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🏀 Gestion de l'équipe</h1>
+
+  <section>
+    <h2>🔐 Connexion</h2>
+    <input type="text" id="login" placeholder="Login">
+    <input type="password" id="password" placeholder="Mot de passe">
+    <button onclick="connexion()">Se connecter</button>
+    <p id="token-status"></p>
+  </section>
+
+  <section>
+    <h2>👥 Joueurs</h2>
+    <button onclick="chargerJoueurs()">Recharger la liste</button>
+    <ul id="liste-joueurs"></ul>
+
+    <h3>➕ Ajouter un joueur</h3>
+    <input id="ajout-licence" placeholder="Licence">
+    <input id="ajout-nom" placeholder="Nom">
+    <input id="ajout-prenom" placeholder="Prénom">
+    <input id="ajout-naissance" placeholder="Date de naissance (YYYY-MM-DD)">
+    <input id="ajout-taille" placeholder="Taille">
+    <input id="ajout-poids" placeholder="Poids">
+    <input id="ajout-poste" placeholder="Poste">
+    <input id="ajout-statut" placeholder="ID Statut (1 à 4)">
+    <button onclick="ajouterJoueur()">Ajouter</button>
+
+    <h3>✏️ Modifier un joueur</h3>
+    <input id="modif-licence" placeholder="Licence (existant)">
+    <input id="modif-nom" placeholder="Nom">
+    <input id="modif-prenom" placeholder="Prénom">
+    <input id="modif-naissance" placeholder="Date de naissance (YYYY-MM-DD)">
+    <input id="modif-taille" placeholder="Taille">
+    <input id="modif-poids" placeholder="Poids">
+    <input id="modif-poste" placeholder="Poste">
+    <input id="modif-statut" placeholder="ID Statut">
+    <button onclick="modifierJoueur()">Modifier</button>
+
+    <h3>❌ Supprimer un joueur</h3>
+    <input id="suppr-licence" placeholder="Licence à supprimer">
+    <button onclick="supprimerJoueur()">Supprimer</button>
+  </section>
+
+  <section>
+    <h2>🏟️ Matchs</h2>
+    <button onclick="chargerMatchs()">Recharger la liste</button>
+    <ul id="liste-matchs"></ul>
+
+    <h3>➕ Ajouter un match</h3>
+    <input id="ajout-match-id" placeholder="ID Match">
+    <input id="ajout-dateheure" placeholder="Date & Heure (YYYY-MM-DD HH:MM:SS)">
+    <input id="ajout-lieu" placeholder="Lieu">
+    <input id="ajout-adversaire" placeholder="Adversaire">
+    <input id="ajout-score-equipe" placeholder="Score Équipe">
+    <input id="ajout-score-adv" placeholder="Score Adverse">
+    <input id="ajout-victoire" placeholder="Victoire (1/0)">
+    <input id="ajout-egalite" placeholder="Égalité (1/0)">
+    <button onclick="ajouterMatch()">Ajouter</button>
+
+    <h3>✏️ Modifier un match</h3>
+    <input id="modif-match-id" placeholder="ID Match">
+    <input id="modif-dateheure" placeholder="Date & Heure">
+    <input id="modif-lieu" placeholder="Lieu">
+    <input id="modif-adversaire" placeholder="Adversaire">
+    <input id="modif-score-equipe" placeholder="Score Équipe">
+    <input id="modif-score-adv" placeholder="Score Adverse">
+    <input id="modif-victoire" placeholder="Victoire">
+    <input id="modif-egalite" placeholder="Égalité">
+    <button onclick="modifierMatch()">Modifier</button>
+
+    <h3>❌ Supprimer un match</h3>
+    <input id="suppr-match-id" placeholder="ID Match">
+    <button onclick="supprimerMatch()">Supprimer</button>
+  </section>
+
+  <section>
+    <h2>📄 Feuilles de match</h2>
+    <input id="feuille-id-match" placeholder="ID Match">
+    <button onclick="chargerFeuilleMatch()">Afficher la feuille</button>
+    <ul id="liste-feuille"></ul>
+
+    <h3>➕ Ajouter une participation</h3>
+    <input id="part-licence" placeholder="Licence joueur">
+    <input id="part-id-match" placeholder="ID Match">
+    <input id="part-statut" placeholder="Statut (Titulaire...)">
+    <input id="part-poste" placeholder="Poste">
+    <input id="part-note" placeholder="Note (/5)">
+    <button onclick="ajouterParticipation()">Ajouter</button>
+
+    <h3>✏️ Modifier une participation</h3>
+    <input id="modif-licence-part" placeholder="Licence joueur">
+    <input id="modif-id-match" placeholder="ID Match">
+    <input id="modif-statut-part" placeholder="Statut Participation">
+    <input id="modif-poste-part" placeholder="Poste Match">
+    <input id="modif-note-part" placeholder="Note">
+    <button onclick="modifierParticipation()">Modifier</button>
+
+    <h3>❌ Supprimer une participation</h3>
+    <input id="suppr-licence-part" placeholder="Licence joueur">
+    <input id="suppr-id-match-part" placeholder="ID Match">
+    <button onclick="supprimerParticipation()">Supprimer</button>
+  </section>
+
+  <section>
+    <h2>📊 Statistiques</h2>
+    <button onclick="chargerStats()">Voir les stats</button>
+    <pre id="stats"></pre>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
