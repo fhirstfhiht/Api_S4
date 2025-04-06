@@ -1,0 +1,544 @@
+{
+	"info": {
+		"_postman_id": "becc54cf-fd0e-42c1-838a-88e925811f60",
+		"name": "Projet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41653584"
+	},
+	"item": [
+		{
+			"name": "Joueur",
+			"item": [
+				{
+					"name": "Joueurs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/back_end/joueurs.php",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"back_end",
+								"joueurs.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ajouter un joueur",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Numero_Licence\": \"LIC77777\",\r\n  \"Nom\": \"Gobert\",\r\n  \"Prenom\": \"Rudy\",\r\n  \"Date_De_Naissance\": \"1992-06-26\",\r\n  \"Taille\": \"2.16\",\r\n  \"Poids\": \"117.0\",\r\n  \"Commentaires\": \"Pivot principal\",\r\n  \"Poste_Joueur\": \"Pivot\",\r\n  \"Id_Statut\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/back_end/joueurs.php",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"back_end",
+								"joueurs.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modifier un joueur",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Nom\": \"Gobert\",\r\n  \"Prenom\": \"Rudy\",\r\n  \"Date_De_Naissance\": \"1992-06-26\",\r\n  \"Taille\": \"2.15\",\r\n  \"Poids\": \"115.5\",\r\n  \"Commentaires\": \"Modifié en test\",\r\n  \"Poste_Joueur\": \"Pivot\",\r\n  \"Id_Statut\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/back_end/joueurs.php?Numero_Licence=LIC77777",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"back_end",
+								"joueurs.php"
+							],
+							"query": [
+								{
+									"key": "Numero_Licence",
+									"value": "LIC77777"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer un joueur",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/back_end/joueurs.php?Numero_Licence=LIC77777",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"back_end",
+								"joueurs.php"
+							],
+							"query": [
+								{
+									"key": "Numero_Licence",
+									"value": "LIC77777"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "auth_api",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"coach1\",\r\n    \"password\": \"admin\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/auth_api/login.php",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"auth_api",
+								"login.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/auth_api/profile.php",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"auth_api",
+								"profile.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Match",
+			"item": [
+				{
+					"name": "Matchs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/back_end/matchs.php",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"back_end",
+								"matchs.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ajouter un match",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Id_Match\": 4,\r\n  \"Date_Heure_Match\": \"2024-05-10 19:00:00\",\r\n  \"Lieu\": \"Toulouse Arena\",\r\n  \"Adversaire\": \"Italie U20\",\r\n  \"Score_Equipe\": 81,\r\n  \"Score_Adversaire\": 76,\r\n  \"Victoire\": 1,\r\n  \"Egalite\": 0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/back_end/matchs.php",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"back_end",
+								"matchs.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modifier un match",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Date_Heure_Match\": \"2024-05-10 20:00:00\",\r\n  \"Lieu\": \"Toulouse Arena\",\r\n  \"Adversaire\": \"Italie U20\",\r\n  \"Score_Equipe\": 83,\r\n  \"Score_Adversaire\": 79,\r\n  \"Victoire\": 1,\r\n  \"Egalite\": 0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/back_end/matchs.php?Id_Match=4",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"back_end",
+								"matchs.php"
+							],
+							"query": [
+								{
+									"key": "Id_Match",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer un match",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/back_end/matchs.php?Id_Match=4",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"back_end",
+								"matchs.php"
+							],
+							"query": [
+								{
+									"key": "Id_Match",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Feuilles de match",
+			"item": [
+				{
+					"name": "Feuiille de match",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/back_end/feuilles.php?Id_Match=3",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"back_end",
+								"feuilles.php"
+							],
+							"query": [
+								{
+									"key": "Id_Match",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ajouter une participation à un match",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Numero_Licence\": \"LIC77777\",\r\n  \"Id_Match\": 3,\r\n  \"Statut_Participation\": \"Titulaire\",\r\n  \"Poste_Match\": \"Pivot\",\r\n  \"Note\": \"4\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/back_end/feuilles.php",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"back_end",
+								"feuilles.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer une participation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/back_end/feuilles.php?Numero_Licence=LIC77777&Id_Match=3",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"back_end",
+								"feuilles.php"
+							],
+							"query": [
+								{
+									"key": "Numero_Licence",
+									"value": "LIC77777"
+								},
+								{
+									"key": "Id_Match",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modifier participation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Statut_Participation\": \"Titulaire\",\r\n  \"Poste_Match\": \"Arrière\",\r\n  \"Note\": \"5\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/back_end/feuilles.php?Numero_Licence=LIC12345&Id_Match=3",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"back_end",
+								"feuilles.php"
+							],
+							"query": [
+								{
+									"key": "Numero_Licence",
+									"value": "LIC12345"
+								},
+								{
+									"key": "Id_Match",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stats",
+			"item": [
+				{
+					"name": "Statistiques",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deploiementapiissam.alwaysdata.net/back_end/stats.php",
+							"protocol": "https",
+							"host": [
+								"deploiementapiissam",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"back_end",
+								"stats.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoX2FwaSIsImlhdCI6MTc0Mzk1MzIwNSwiZXhwIjoxNzQzOTU2ODA1LCJ1c2VyIjp7ImlkIjoxLCJsb2dpbiI6ImNvYWNoMSIsInJvbGUiOiJlbnRyYWluZXVyIn19.DGZjDm2KuzIxJ8abZzpWbI0XQCUSt2VsOJ8KqYFCB6o",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
